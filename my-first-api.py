@@ -1,8 +1,18 @@
 from connection import create_connection, close_connection
 from credentials import credentials
-from flask import Flask, jsonify
+from flask import Flask
+import json
+from json import JSONEncoder
+
+lista = list()
+movies = list()
 
 app = Flask(__name__)  # ----> Forma padrão de inicializar o Flask.
+
+
+class CustomEncoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
 
 
 @app.route('/')
@@ -16,10 +26,17 @@ def filmes():
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
     dados = cursor.fetchall()
-    response = {'Filmes': dados}
+    for f in dados:
+        lista.append(f)
+    for l in lista:
+        movies.append(
+            {'Id': l[0],
+             'Título': l[1],
+             'Ano': l[2],
+             'Direção': l[3]})
     cursor.close()
     close_connection(conexao)
-    return jsonify(response)
+    return json.dumps(movies, indent=4, cls=CustomEncoder, ensure_ascii=False)
 
 
 app.run()  # ----> Comando para rodar a API.
