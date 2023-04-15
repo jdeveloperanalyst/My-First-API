@@ -1,4 +1,5 @@
-from connection import create_connection, close_connection, credentials
+from connection import create_connection, close_connection
+from credentials import credentials
 from flask import Flask, jsonify
 
 app = Flask(__name__)  # ----> Forma padrão de inicializar o Flask.
