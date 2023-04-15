@@ -1,5 +1,5 @@
 from connection import create_connection, close_connection
-from credentials import credentials
+from credentials import credenciais
 from flask import Flask
 import json
 from json import JSONEncoder
@@ -22,7 +22,7 @@ def homepage():
 
 @app.route('/filmes')
 def filmes():
-    conexao = create_connection(credentials['host'], credentials['user'], credentials['password'], credentials['database'])
+    conexao = create_connection(credenciais['host'], credenciais['user'], credenciais['password'], credenciais['database'])
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
     dados = cursor.fetchall()
