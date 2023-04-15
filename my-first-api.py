@@ -1,19 +1,5 @@
-import mysql.connector
+from connection import create_connection, close_connection, credentials
 from flask import Flask, jsonify
-
-credentials = {'host': 'localhost',
-               'user': 'root',
-               'password': '',
-               'database': 'devflix'}
-
-
-def create_connection(host, user, password, database):
-    return mysql.connector.connect(host=host, user=user, password=password, database=database)
-
-
-def close_connection(con):
-    return con.close()
-
 
 app = Flask(__name__)  # ----> Forma padrão de inicializar o Flask.
 
