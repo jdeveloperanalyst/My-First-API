@@ -39,4 +39,5 @@ def filmes():
     return json.dumps(movies, indent=4, cls=CustomEncoder, ensure_ascii=False)
 
 
-app.run()  # ----> Comando para rodar a API.
+if __name__ == '__main__':
+    app.run(debug=True)  # ----> Comando para rodar a API.
