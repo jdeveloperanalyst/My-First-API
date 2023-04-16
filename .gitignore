@@ -2,5 +2,4 @@
 *.idea
 *.xml
 *.iml
-credentials.py
 __pycache__/
