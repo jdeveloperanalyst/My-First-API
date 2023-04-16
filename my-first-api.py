@@ -1,6 +1,6 @@
 from connection import create_connection, close_connection
-from credentials import credenciais
 from flask import Flask
+from credentials import credenciais
 import json
 from json import JSONEncoder
 
