@@ -4,3 +4,7 @@
 *.iml
 credentials.py
 __pycache__/
+.vercel
+.env
+requirements.txt
+vercel.json

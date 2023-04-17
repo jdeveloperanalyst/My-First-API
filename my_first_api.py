@@ -1,6 +1,5 @@
-from connection import create_connection, close_connection
+from connection import create_connection, close_connection, MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB, PORT, load_dotenv
 from flask import Flask
-from credentials import credenciais
 import json
 from json import JSONEncoder
 
@@ -22,7 +21,8 @@ def homepage():
 
 @app.route('/filmes')
 def filmes():
-    conexao = create_connection(credenciais['host'], credenciais['user'], credenciais['password'], credenciais['database'])
+    load_dotenv()
+    conexao = create_connection(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB, PORT)
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
     dados = cursor.fetchall()
