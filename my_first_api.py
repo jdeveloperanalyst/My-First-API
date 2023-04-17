@@ -22,7 +22,7 @@ def homepage():
 
 @app.route('/filmes')
 def filmes():
-    conexao = create_connection(credenciais['host'], credenciais['user'], credenciais['password'], credenciais['database'])
+    conexao = create_connection(credenciais['host'], credenciais['user'], credenciais['password'], credenciais['database'], credenciais['port'])
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
     dados = cursor.fetchall()

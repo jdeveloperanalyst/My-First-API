@@ -1,8 +1,8 @@
 import mysql.connector
 
 
-def create_connection(host, user, password, database):
-    return mysql.connector.connect(host=host, user=user, password=password, database=database)
+def create_connection(host, user, password, database, port):
+    return mysql.connector.connect(host=host, user=user, password=password, database=database, port=port)
 
 
 def close_connection(con):
