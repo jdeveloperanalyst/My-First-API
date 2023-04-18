@@ -3,8 +3,6 @@ from flask import Flask
 import json
 from json import JSONEncoder
 
-lista = list()
-movies = list()
 
 app = Flask(__name__)  # ----> Forma padrão de inicializar o Flask.
 
@@ -25,6 +23,8 @@ def filmes():
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
     dados = cursor.fetchall()
+    lista = list()
+    movies = list()
     for f in dados:
         lista.append(f)
     for l in lista:
