@@ -21,7 +21,6 @@ def homepage():
 
 @app.route('/filmes')
 def filmes():
-    load_dotenv()
     conexao = create_connection(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB, PORT)
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM filmes')
