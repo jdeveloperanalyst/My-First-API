@@ -1,7 +1,8 @@
-from connection import create_connection, close_connection, MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB, PORT, load_dotenv
+from connection import create_connection, close_connection, MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB, PORT
 from flask import Flask
 import json
 from json import JSONEncoder
+import markdown
 
 
 app = Flask(__name__)  # ----> Forma padrão de inicializar o Flask.
@@ -14,7 +15,9 @@ class CustomEncoder(JSONEncoder):
 
 @app.route('/')
 def homepage():
-    return 'API online. Acesse /filmes para ver os filmes disponíveis'
+    texto = '**API disponível!**\n\n Para recuperar a lista de filmes disponíveis, faça uma solicitação **GET** para o endpoint **/filmes.**'
+    html = markdown.markdown(texto)
+    return html
 
 
 @app.route('/filmes')
