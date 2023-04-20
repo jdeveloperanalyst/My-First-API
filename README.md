@@ -20,7 +20,7 @@ API disponível!
 Para recuperar a lista de filmes disponíveis, faça uma solicitação GET para o endpoint /filmes.
 ```
 
-#### GET /filmes
+#### GET /filmes:
 
 Endpoint de filmes: https://my-first-api-jdeveloperanalyst.vercel.app/filmes
 
@@ -70,6 +70,9 @@ __*Exemplo de resposta:*__
 #### Códigos de erro:
 * **404 Não encontrado:** *O endpoint solicitado não existe.*
 * **500 Erro interno do servidor:** *Ocorreu um erro ao processar a solicitação.*
+<br>
+
+## Vídeo Explicativo
 
 :construction: [*Clique aqui*]() *Vídeo explicativo em construção :construction:*
 
