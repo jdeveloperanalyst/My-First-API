@@ -1,4 +1,5 @@
 from app.database import db
+from collections import OrderedDict
 
 class Filme(db.Model):
     __tablename__ = "filmes"
@@ -9,9 +10,9 @@ class Filme(db.Model):
     diretor = db.Column(db.String(30))
 
     def to_dict(self):
-        return {
-            "id": self.id,
-            "titulo": self.titulo,
-            "ano": self.ano,
-            "diretor": self.diretor
-        }
+        return OrderedDict([
+            ("id", self.id),
+            ("titulo", self.titulo),
+            ("ano", self.ano),
+            ("diretor", self.diretor)
+        ])
