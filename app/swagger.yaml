@@ -1,0 +1,93 @@
+swagger: "2.0"
+info:
+  title: API de Filmes
+  description: Documentação da API para gerenciamento de filmes
+  version: "1.0"
+host: localhost:5000
+basePath: /
+schemes:
+  - http
+paths:
+  /filmes:
+    get:
+      summary: Lista todos os filmes
+      tags:
+        - Filmes
+      responses:
+        200:
+          description: Lista de filmes
+    post:
+      summary: Adiciona um novo filme
+      tags:
+        - Filmes
+      parameters:
+        - in: body
+          name: filme
+          required: true
+          schema:
+            type: object
+            properties:
+              titulo:
+                type: string
+              diretor:
+                type: string
+              ano:
+                type: integer
+      responses:
+        201:
+          description: Filme criado
+  /filmes/{filme_id}:
+    get:
+      summary: Busca um filme pelo ID
+      tags:
+        - Filmes
+      parameters:
+        - name: filme_id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Filme encontrado
+        404:
+          description: Filme não encontrado
+    put:
+      summary: Atualiza um filme
+      tags:
+        - Filmes
+      parameters:
+        - name: filme_id
+          in: path
+          required: true
+          type: integer
+        - in: body
+          name: filme
+          required: true
+          schema:
+            type: object
+            properties:
+              titulo:
+                type: string
+              diretor:
+                type: string
+              ano:
+                type: integer
+      responses:
+        200:
+          description: Filme atualizado
+        404:
+          description: Filme não encontrado
+    delete:
+      summary: Deleta um filme
+      tags:
+        - Filmes
+      parameters:
+        - name: filme_id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Filme deletado
+        404:
+          description: Filme não encontrado

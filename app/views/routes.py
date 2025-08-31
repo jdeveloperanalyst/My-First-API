@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, Response, request
+from flask import Flask, Blueprint, Response, request, redirect
 import json
 from app.controllers import filme_controller
 
@@ -6,7 +6,7 @@ routes = Blueprint("routes", __name__)
 
 @routes.route("/")
 def home():
-    return Response(json.dumps({"message": "API disponível! Use /filmes para CRUD."}))
+    return redirect("/apidocs")
 
 @routes.route("/filmes", methods=["GET"])
 def get_filmes():
