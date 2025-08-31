@@ -5,6 +5,7 @@
 ![SQLAlchemy](https://img.shields.io/badge/ORM-SQLAlchemy-orange)
 ![Docker](https://img.shields.io/badge/container-Docker-blue)
 ![Swagger](https://img.shields.io/badge/docs-Swagger-brightgreen)
+![Postman](https://img.shields.io/badge/tested%20with-Postman-orange)
 
 Uma API RESTful para gerenciamento de filmes, desenvolvida com **Python**, utilizando o framework **Flask**, o ORM **SQLAlchemy** e conteinerizada com **Docker**. O projeto segue o padrão arquitetural **MVC (Model-View-Controller)** e inclui documentação interativa via **Swagger**, acessível diretamente na raiz (`/`) da aplicação.
 
@@ -70,6 +71,7 @@ MY-FIRST-API/
    docker-compose up --build
    ```
    docker-compose.yml
+   
    <img width="810" height="817" alt="image" src="https://github.com/user-attachments/assets/be6f6a3f-c726-4d56-b5d6-e0906bc42ea3" />
 
 6. Acesse a API em:
@@ -86,6 +88,13 @@ Você pode visualizar todos os endpoints, parâmetros e realizar testes diretame
 
 <img width="1726" height="907" alt="image" src="https://github.com/user-attachments/assets/cf5ce2f0-8196-414f-810f-37b93f2bcf1d" />
 
+## 🧪 Testes com Postman
+
+Durante o desenvolvimento, os endpoints da API foram testados utilizando o Postman para garantir o correto funcionamento de todas as rotas.
+
+Exemplo de requisição GET /filmes no Postman:
+
+<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/ffccb5a5-7770-4c98-b870-3d87ec28ae85" />
 
 
 ## 🛠️ Endpoints principais
